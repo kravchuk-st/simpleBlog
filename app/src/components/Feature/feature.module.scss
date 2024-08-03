@@ -1,0 +1,16 @@
+.section {
+  padding: 40px 0;
+  background-color: #f6f6f6;
+
+  :global {
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px 30px;
+
+      & > * {
+        flex: 1 0 580px;
+      }
+    }
+  }
+}
