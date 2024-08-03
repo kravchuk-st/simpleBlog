@@ -53,4 +53,5 @@ export type {
   IMenuBtn,
   ICard,
   IData,
+  ICategory,
 };

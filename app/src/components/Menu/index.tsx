@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "@/app/layout";
 import Btn from "./MenuBtn";
 import styles from "./menu.module.scss";
+import { ICategory } from "@/types";
 
 export default function Menu() {
   const { categoriesList } = useContext(AppContext);
@@ -16,9 +17,4 @@ export default function Menu() {
       </div>
     </div>
   );
-}
-
-interface ICategory {
-  id: number;
-  attributes: { [key: string]: string };
 }
