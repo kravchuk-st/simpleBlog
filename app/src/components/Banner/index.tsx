@@ -15,22 +15,25 @@ export default function Banner() {
   return (
     <section className={styles.banner}>
       <div className={styles.banner__slider}>
-        <Swiper
-          className={`mySwiper ${styles.banner__slider}`}
-          effect={"fade"}
-          navigation={true}
-          modules={[EffectFade, Navigation]}
-          slidesPerView={1}
-          spaceBetween={2}
-          loop={true}
-        >
-          {articlesSlider.length &&
-            [...articlesSlider].reverse().map((el) => (
-              <SwiperSlide className={styles.banner__slide} key={el.id}>
-                {<SlideContent data={el.attributes} />}
-              </SwiperSlide>
-            ))}
-        </Swiper>
+        {articlesSlider.length > 0 && (
+          <Swiper
+            className={`mySwiper ${styles.banner__slider}`}
+            effect={"fade"}
+            navigation={true}
+            modules={[EffectFade, Navigation]}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            spaceBetween={2}
+            loop={true}
+          >
+            {articlesSlider.length &&
+              [...articlesSlider].reverse().map((el) => (
+                <SwiperSlide className={styles.banner__slide} key={el.id}>
+                  {<SlideContent data={el.attributes} />}
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        )}
       </div>
     </section>
   );

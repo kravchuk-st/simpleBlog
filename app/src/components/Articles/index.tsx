@@ -32,15 +32,15 @@ export default function Articles() {
           articles.length > 3 ? styles.layout : ""
         )}`}
       >
-        {articles.length > 0 ? (
-          articles.map((el: { attributes: ICard }) => (
-            <Card {...el.attributes} key={el.attributes.publishedAt} />
-          ))
-        ) : (
-          <h2 className={styles.title}>
-            At your request "{searchTerm}", nothing was found.
-          </h2>
-        )}
+        {articles.length > 0
+          ? articles.map((el: { attributes: ICard }) => (
+              <Card {...el.attributes} key={el.attributes.publishedAt} />
+            ))
+          : searchTerm && (
+              <h2 className={styles.title}>
+                At your request "{searchTerm}", nothing was found.
+              </h2>
+            )}
       </div>
     </section>
   );
